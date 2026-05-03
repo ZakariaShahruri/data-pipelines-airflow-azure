@@ -13,21 +13,33 @@ airflow_env/
 venv/
 .venv/
 
-# Pipeline outputs (large files)
-output/
-output_zone/
-*/output/
-*/output_zone/
-logs/
+# Pipeline outputs — keep folder structure via .gitkeep, ignore contents
+output/*
+!output/.gitkeep
+*/output/*
+!*/output/.gitkeep
+output_zone/*
+!output_zone/.gitkeep
+*/output_zone/*
+!*/output_zone/.gitkeep
 
-# Parquet data files (can be large)
-*.parquet
-input/
+# Airflow logs — keep folder structure via .gitkeep, ignore contents
+logs/*
+!logs/.gitkeep
+
+# Input data files — too large to commit, download separately
+input/*
+!input/.gitkeep
+*/input/*
+!*/input/.gitkeep
 input_zone/*.csv
 input_zone/*.xlsx
 input_zone/*.xls
-# Keep the archived folder structure but not the files
+*/input_zone/*.csv
+*/input_zone/*.xlsx
+*/input_zone/*.xls
 !input_zone/archived/.gitkeep
+!*/input_zone/archived/.gitkeep
 
 # macOS
 .DS_Store
