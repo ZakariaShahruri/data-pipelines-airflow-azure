@@ -48,5 +48,3 @@ input_zone/*.xls
 .idea/
 .vscode/
 
-# Claude Code project settings
-.claude/

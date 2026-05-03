@@ -10,7 +10,7 @@ Two independent data pipelines orchestrated by **Apache Airflow** and writing to
 
 | | Part 1 — Batch | Part 2 — Real-time |
 |---|---|---|
-| Dataset | NYC Yellow Taxi, Jan 2025 (~3.4 M rows) | Retail Inventory (149 rows, 11 columns) |
+| Dataset | NYC Yellow Taxi, Jan 2025 (~3.4 M rows) | Retail Inventory (150 rows, 11 columns) |
 | Input | `.parquet` file | `.csv` / `.xlsx` dropped into a folder |
 | Trigger | Scheduled — 5 May 2026 (or manual) | File drop into `input_zone/` |
 | Output | Local `.parquet` + Azure Blob | Local `.csv` + Azure Blob |
