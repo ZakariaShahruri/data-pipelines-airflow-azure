@@ -1,0 +1,40 @@
+# Credentials — never commit these
+.env
+*/.env
+
+# Python cache
+__pycache__/
+*/__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+airflow_env/
+venv/
+.venv/
+
+# Pipeline outputs (large files)
+output/
+output_zone/
+*/output/
+*/output_zone/
+logs/
+
+# Parquet data files (can be large)
+*.parquet
+input/
+input_zone/*.csv
+input_zone/*.xlsx
+input_zone/*.xls
+# Keep the archived folder structure but not the files
+!input_zone/archived/.gitkeep
+
+# macOS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Claude Code project settings
+.claude/
