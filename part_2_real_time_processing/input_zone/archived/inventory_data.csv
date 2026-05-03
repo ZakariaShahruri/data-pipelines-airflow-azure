@@ -1,0 +1,151 @@
+,Customer ID,Category,Item,Price Per Unit,Quantity,Total Spent,Payment Method,Location,Transaction Date,Discount Applied
+TXN_6867343,CUST_09,Patisserie,Item_10_PAT,18.5,10,185,Digital Wallet,Online,08/04/2024,TRUE
+TXN_3731986,CUST_22,Milk Products,Item_17_MILK,29,9,261,Digital Wallet,Online,23/07/2023,TRUE
+TXN_9303719,CUST_02,Butchers,Item_12_BUT,21.5,2,43,Credit Card,Online,05/10/2022,FALSE
+TXN_9458126,CUST_06,Beverages,Item_16_BEV,27.5,9,247.5,Credit Card,Online,07/05/2022,
+TXN_4575373,CUST_05,Food,Item_6_FOOD,12.5,7,87.5,Digital Wallet,Online,02/10/2022,FALSE
+TXN_7482416,CUST_09,Patisserie,,,10,200,Credit Card,Online,30/11/2023,
+TXN_3652209,CUST_07,Food,Item_1_FOOD,5,8,40,Credit Card,In-store,10/06/2023,TRUE
+TXN_1372952,CUST_21,Furniture,,33.5,,,Digital Wallet,In-store,02/04/2024,TRUE
+TXN_9728486,CUST_23,Furniture,Item_16_FUR,27.5,1,27.5,Credit Card,In-store,26/04/2023,FALSE
+TXN_2722661,CUST_25,Butchers,Item_22_BUT,36.5,3,109.5,Cash,Online,14/03/2024,FALSE
+TXN_8776416,CUST_22,Butchers,Item_3_BUT,8,9,72,Cash,In-store,14/12/2024,TRUE
+TXN_5422631,CUST_09,Milk Products,,,8,52,Digital Wallet,In-store,12/01/2025,TRUE
+TXN_5874772,CUST_23,Food,Item_2_FOOD,6.5,7,45.5,Cash,Online,09/09/2023,TRUE
+TXN_4413070,CUST_14,Patisserie,Item_24_PAT,39.5,6,237,Digital Wallet,In-store,20/05/2022,FALSE
+TXN_2490363,CUST_09,Milk Products,Item_16_MILK,27.5,2,55,Digital Wallet,Online,22/05/2022,
+TXN_1809665,CUST_14,Beverages,,24.5,,,Credit Card,In-store,11/05/2022,
+TXN_7563311,CUST_23,Patisserie,Item_17_PAT,29,8,232,Cash,Online,16/11/2024,TRUE
+TXN_9634894,CUST_15,Milk Products,,,10,275,Digital Wallet,Online,17/04/2022,
+TXN_4396807,CUST_17,Electric household essentials,Item_13_EHE,23,1,23,Digital Wallet,In-store,07/02/2022,FALSE
+TXN_4206593,CUST_01,Furniture,,35,,,Digital Wallet,Online,13/01/2025,FALSE
+TXN_9939063,CUST_14,Beverages,Item_7_BEV,14,9,126,Digital Wallet,In-store,14/01/2024,
+TXN_8685338,CUST_15,Milk Products,,,3,105,Credit Card,In-store,29/10/2023,
+TXN_6547964,CUST_10,Electric household essentials,Item_4_EHE,9.5,7,66.5,Cash,In-store,15/08/2022,
+TXN_3314099,CUST_04,Food,Item_10_FOOD,18.5,1,18.5,Cash,Online,30/09/2023,FALSE
+TXN_9980736,CUST_13,Furniture,Item_14_FUR,24.5,2,49,Cash,Online,29/08/2023,FALSE
+TXN_3481599,CUST_05,Furniture,,39.5,,,Cash,Online,08/09/2022,FALSE
+TXN_9057609,CUST_18,Butchers,Item_20_BUT,33.5,4,134,Credit Card,In-store,16/03/2022,TRUE
+TXN_1599706,CUST_14,Furniture,Item_25_FUR,41,10,410,Credit Card,In-store,24/03/2024,TRUE
+TXN_1598860,CUST_08,Food,Item_14_FOOD,24.5,10,245,Cash,In-store,23/10/2022,TRUE
+TXN_7138501,CUST_18,Patisserie,Item_22_PAT,36.5,5,182.5,Credit Card,In-store,10/03/2022,FALSE
+TXN_5444504,CUST_05,Food,Item_11_FOOD,20,10,200,Digital Wallet,Online,26/04/2022,FALSE
+TXN_4353295,CUST_22,Patisserie,Item_6_PAT,12.5,8,100,Credit Card,Online,05/04/2022,TRUE
+TXN_1543244,CUST_20,Food,,,8,196,Credit Card,Online,25/10/2024,TRUE
+TXN_1494700,CUST_12,Electric household essentials,Item_21_EHE,35,9,315,Credit Card,In-store,07/03/2024,
+TXN_1621497,CUST_06,Patisserie,,23,,,Cash,In-store,18/02/2023,
+TXN_6398436,CUST_15,Beverages,Item_25_BEV,41,7,287,Credit Card,In-store,03/06/2024,TRUE
+TXN_9065245,CUST_02,Food,Item_23_FOOD,38,2,76,Digital Wallet,In-store,10/03/2024,FALSE
+TXN_6963438,CUST_11,Furniture,Item_10_FUR,18.5,5,92.5,Credit Card,Online,23/04/2024,TRUE
+TXN_8312797,CUST_14,Beverages,Item_11_BEV,20,5,100,Digital Wallet,Online,03/06/2022,
+TXN_5836005,CUST_19,Butchers,Item_23_BUT,38,5,190,Credit Card,In-store,19/10/2024,FALSE
+TXN_4223250,CUST_16,Beverages,Item_22_BEV,36.5,7,255.5,Cash,Online,31/05/2023,TRUE
+TXN_1019817,CUST_16,Electric household essentials,Item_10_EHE,18.5,5,92.5,Cash,Online,01/08/2022,
+TXN_1110407,CUST_25,Butchers,Item_24_BUT,39.5,7,276.5,Digital Wallet,In-store,21/10/2022,
+TXN_6276518,CUST_24,Beverages,Item_8_BEV,15.5,3,46.5,Cash,In-store,08/04/2024,
+TXN_4740738,CUST_25,Food,Item_3_FOOD,8,1,8,Digital Wallet,In-store,19/04/2022,
+TXN_9587232,CUST_20,Food,Item_12_FOOD,21.5,5,107.5,Digital Wallet,Online,28/02/2023,TRUE
+TXN_6404316,CUST_04,Computers and electric accessories,Item_16_CEA,27.5,6,165,Credit Card,Online,06/04/2022,FALSE
+TXN_9331642,CUST_12,Patisserie,Item_11_PAT,20,4,80,Credit Card,Online,06/07/2022,TRUE
+TXN_9729422,CUST_13,Butchers,Item_16_BUT,27.5,6,165,Credit Card,Online,31/12/2024,TRUE
+TXN_8425168,CUST_25,Milk Products,Item_16_MILK,27.5,7,192.5,Cash,In-store,12/03/2022,
+TXN_5379241,CUST_05,Butchers,Item_20_BUT,33.5,10,335,Credit Card,In-store,12/04/2023,FALSE
+TXN_8413369,CUST_23,Computers and electric accessories,Item_5_CEA,11,6,66,Credit Card,Online,09/03/2024,TRUE
+TXN_4836321,CUST_21,Food,Item_12_FOOD,21.5,10,215,Digital Wallet,In-store,14/01/2023,FALSE
+TXN_9451794,CUST_24,Milk Products,Item_19_MILK,32,3,96,Credit Card,Online,28/01/2024,
+TXN_8218431,CUST_01,Furniture,Item_23_FUR,38,5,190,Digital Wallet,Online,29/04/2023,FALSE
+TXN_2383377,CUST_15,Furniture,Item_7_FUR,14,3,42,Digital Wallet,In-store,02/04/2023,
+TXN_7909783,CUST_12,Computers and electric accessories,Item_5_CEA,11,1,11,Credit Card,Online,17/12/2023,TRUE
+TXN_5046007,CUST_07,Computers and electric accessories,Item_15_CEA,26,9,234,Cash,Online,22/07/2024,TRUE
+TXN_6966182,CUST_02,Furniture,Item_16_FUR,27.5,9,247.5,Cash,Online,06/09/2024,
+TXN_3424571,CUST_09,Milk Products,Item_6_MILK,12.5,7,87.5,Credit Card,Online,13/01/2023,FALSE
+TXN_6820452,CUST_10,Computers and electric accessories,Item_24_CEA,39.5,8,316,Credit Card,In-store,18/04/2023,FALSE
+TXN_1998771,CUST_25,Milk Products,Item_16_MILK,27.5,3,82.5,Digital Wallet,Online,07/11/2024,TRUE
+TXN_1132097,CUST_24,Patisserie,Item_11_PAT,20,9,180,Credit Card,In-store,18/05/2023,TRUE
+TXN_5418871,CUST_04,Computers and electric accessories,Item_22_CEA,36.5,7,255.5,Cash,In-store,16/03/2022,FALSE
+TXN_6952276,CUST_01,Food,Item_22_FOOD,36.5,10,365,Credit Card,Online,02/08/2024,TRUE
+TXN_6340470,CUST_17,Butchers,Item_2_BUT,6.5,6,39,Credit Card,In-store,12/10/2022,
+TXN_5885894,CUST_01,Patisserie,Item_14_PAT,24.5,10,245,Credit Card,In-store,09/02/2022,FALSE
+TXN_3671271,CUST_18,Patisserie,Item_12_PAT,21.5,8,172,Cash,In-store,27/11/2023,FALSE
+TXN_2719047,CUST_03,Butchers,Item_20_BUT,33.5,4,134,Credit Card,Online,21/11/2023,
+TXN_9908330,CUST_19,Food,Item_18_FOOD,30.5,4,122,Credit Card,Online,29/09/2022,TRUE
+TXN_2016332,CUST_17,Patisserie,Item_1_PAT,5,6,30,Digital Wallet,Online,17/12/2022,TRUE
+TXN_7363165,CUST_25,Beverages,Item_4_BEV,9.5,7,66.5,Digital Wallet,In-store,25/03/2023,
+TXN_1260450,CUST_25,Furniture,Item_22_FUR,36.5,10,365,Digital Wallet,In-store,24/12/2023,TRUE
+TXN_6315447,CUST_21,Patisserie,Item_7_PAT,14,9,126,Digital Wallet,In-store,12/01/2025,FALSE
+TXN_5973228,CUST_12,Beverages,Item_7_BEV,14,6,84,Digital Wallet,Online,25/12/2023,TRUE
+TXN_2780662,CUST_02,Milk Products,Item_19_MILK,32,10,320,Digital Wallet,In-store,19/01/2023,
+TXN_1142481,CUST_02,Beverages,Item_22_BEV,36.5,6,219,Cash,In-store,07/02/2023,TRUE
+TXN_3933685,CUST_09,Computers and electric accessories,Item_20_CEA,33.5,10,335,Credit Card,Online,15/04/2022,
+TXN_8955685,CUST_24,Food,Item_20_FOOD,33.5,2,67,Digital Wallet,Online,24/04/2023,
+TXN_1061030,CUST_20,Computers and electric accessories,Item_22_CEA,36.5,4,146,Digital Wallet,Online,14/07/2024,TRUE
+TXN_7821493,CUST_07,Patisserie,Item_17_PAT,29,10,290,Credit Card,In-store,17/12/2024,
+TXN_8114453,CUST_10,Electric household essentials,Item_21_EHE,35,2,70,Digital Wallet,In-store,09/05/2023,FALSE
+TXN_8024803,CUST_09,Furniture,Item_11_FUR,20,8,160,Digital Wallet,In-store,22/08/2024,FALSE
+TXN_4532214,CUST_25,Patisserie,,15.5,,,Credit Card,In-store,25/03/2024,FALSE
+TXN_5062634,CUST_04,Patisserie,Item_25_PAT,41,2,82,Credit Card,Online,06/07/2023,TRUE
+TXN_8244728,CUST_08,Food,Item_7_FOOD,14,1,14,Credit Card,In-store,27/04/2024,
+TXN_3858145,CUST_17,Furniture,Item_21_FUR,35,3,105,Digital Wallet,Online,01/04/2023,
+TXN_2646301,CUST_18,Furniture,Item_24_FUR,39.5,9,355.5,Credit Card,In-store,07/12/2022,FALSE
+TXN_2414530,CUST_24,Milk Products,Item_8_MILK,15.5,8,124,Cash,Online,20/06/2024,
+TXN_8322008,CUST_22,Food,Item_4_FOOD,9.5,3,28.5,Cash,In-store,20/08/2024,FALSE
+TXN_3035546,CUST_19,Beverages,Item_14_BEV,24.5,2,49,Credit Card,In-store,12/07/2023,TRUE
+TXN_7296720,CUST_18,Patisserie,Item_4_PAT,9.5,5,47.5,Cash,Online,12/09/2024,
+TXN_8414071,CUST_20,Patisserie,Item_12_PAT,21.5,9,193.5,Cash,In-store,02/05/2023,TRUE
+TXN_5705131,CUST_19,Milk Products,Item_4_MILK,9.5,4,38,Digital Wallet,Online,27/03/2024,TRUE
+TXN_5938028,CUST_18,Computers and electric accessories,Item_7_CEA,14,1,14,Digital Wallet,Online,20/02/2023,TRUE
+TXN_1958345,CUST_08,Electric household essentials,Item_4_EHE,9.5,8,76,Cash,In-store,28/06/2024,
+TXN_1528585,CUST_15,Electric household essentials,Item_6_EHE,12.5,1,12.5,Credit Card,In-store,17/09/2024,
+TXN_9619859,CUST_01,Butchers,Item_21_BUT,35,4,140,Cash,In-store,05/04/2024,FALSE
+TXN_6158929,CUST_21,Food,Item_11_FOOD,20,6,120,Cash,Online,29/01/2022,TRUE
+TXN_7209607,CUST_25,Food,Item_18_FOOD,30.5,6,183,Credit Card,In-store,25/08/2023,
+TXN_5328604,CUST_07,Food,Item_20_FOOD,33.5,10,335,Cash,Online,08/07/2024,FALSE
+TXN_4324641,CUST_01,Patisserie,Item_16_PAT,27.5,6,165,Cash,In-store,07/11/2023,FALSE
+TXN_9464391,CUST_04,Food,Item_18_FOOD,30.5,10,305,Cash,Online,17/11/2023,
+TXN_2940500,CUST_06,Computers and electric accessories,Item_25_CEA,41,1,41,Cash,In-store,05/11/2024,FALSE
+TXN_1945960,CUST_09,Butchers,Item_8_BUT,15.5,10,155,Digital Wallet,In-store,06/04/2023,FALSE
+TXN_8219228,CUST_17,Computers and electric accessories,Item_10_CEA,18.5,5,92.5,Cash,Online,27/05/2022,FALSE
+TXN_5471094,CUST_14,Butchers,Item_2_BUT,6.5,3,19.5,Digital Wallet,In-store,24/08/2022,FALSE
+TXN_9255329,CUST_01,Furniture,Item_25_FUR,41,7,287,Digital Wallet,In-store,02/03/2022,FALSE
+TXN_9279462,CUST_25,Furniture,Item_5_FUR,11,3,33,Credit Card,In-store,05/02/2022,FALSE
+TXN_7956502,CUST_06,Butchers,Item_8_BUT,15.5,7,108.5,Credit Card,In-store,30/04/2024,
+TXN_1352831,CUST_04,Food,Item_22_FOOD,36.5,3,109.5,Credit Card,Online,31/10/2023,
+TXN_4372655,CUST_08,Food,Item_9_FOOD,17,7,119,Cash,In-store,03/11/2024,FALSE
+TXN_5419965,CUST_23,Computers and electric accessories,,20,,,Digital Wallet,Online,16/01/2024,FALSE
+TXN_7655704,CUST_11,Computers and electric accessories,Item_21_CEA,35,8,280,Digital Wallet,Online,08/08/2022,TRUE
+TXN_8210621,CUST_03,Beverages,,39.5,,,Digital Wallet,Online,03/01/2024,FALSE
+TXN_6908058,CUST_25,Computers and electric accessories,Item_8_CEA,15.5,10,155,Cash,In-store,22/07/2023,FALSE
+TXN_9204828,CUST_07,Computers and electric accessories,Item_25_CEA,41,7,287,Cash,Online,05/03/2022,
+TXN_3208232,CUST_25,Electric household essentials,Item_8_EHE,15.5,4,62,Digital Wallet,In-store,13/01/2024,FALSE
+TXN_8586300,CUST_11,Computers and electric accessories,,27.5,,,Credit Card,Online,08/02/2022,FALSE
+TXN_2212643,CUST_09,Food,Item_3_FOOD,8,4,32,Credit Card,In-store,29/12/2022,FALSE
+TXN_8215469,CUST_17,Milk Products,Item_23_MILK,38,10,380,Digital Wallet,In-store,16/03/2024,
+TXN_3403695,CUST_25,Beverages,Item_23_BEV,38,8,304,Cash,Online,27/09/2024,TRUE
+TXN_2878134,CUST_18,Butchers,Item_8_BUT,15.5,9,139.5,Credit Card,In-store,10/05/2024,
+TXN_3123571,CUST_15,Furniture,Item_23_FUR,38,3,114,Digital Wallet,Online,07/08/2022,
+TXN_9940030,CUST_25,Beverages,Item_19_BEV,32,6,192,Credit Card,In-store,19/01/2022,TRUE
+TXN_6195024,CUST_13,Beverages,Item_20_BEV,33.5,5,167.5,Cash,Online,09/08/2024,FALSE
+TXN_5243520,CUST_13,Patisserie,Item_10_PAT,18.5,5,92.5,Cash,In-store,16/05/2024,FALSE
+TXN_4608122,CUST_21,Butchers,,,10,275,Digital Wallet,Online,01/10/2022,FALSE
+TXN_6923419,CUST_17,Furniture,Item_5_FUR,11,8,88,Digital Wallet,Online,28/06/2022,FALSE
+TXN_1112365,CUST_19,Food,Item_24_FOOD,39.5,10,395,Cash,Online,24/09/2023,
+TXN_6989569,CUST_11,Milk Products,Item_21_MILK,35,2,70,Credit Card,In-store,17/01/2022,FALSE
+TXN_5647023,CUST_12,Furniture,Item_24_FUR,39.5,4,158,Digital Wallet,In-store,14/04/2022,TRUE
+TXN_8049831,CUST_18,Beverages,Item_6_BEV,12.5,2,25,Cash,In-store,05/01/2023,FALSE
+TXN_2953434,CUST_25,Furniture,Item_25_FUR,41,10,410,Credit Card,In-store,10/08/2023,
+TXN_3831408,CUST_18,Milk Products,Item_1_MILK,5,10,50,Digital Wallet,Online,11/02/2022,TRUE
+TXN_1249742,CUST_05,Milk Products,Item_24_MILK,39.5,10,395,Digital Wallet,Online,21/03/2024,
+TXN_4633046,CUST_13,Computers and electric accessories,Item_2_CEA,6.5,5,32.5,Digital Wallet,Online,25/08/2023,
+TXN_3519817,CUST_22,Butchers,Item_18_BUT,30.5,4,122,Digital Wallet,Online,14/06/2022,TRUE
+TXN_1154680,CUST_25,Furniture,,35,,,Credit Card,Online,18/12/2022,FALSE
+TXN_9177662,CUST_15,Furniture,,24.5,,,Cash,In-store,30/09/2024,TRUE
+TXN_4801202,CUST_16,Furniture,Item_1_FUR,5,3,15,Digital Wallet,Online,31/05/2024,FALSE
+TXN_6149882,CUST_09,Beverages,Item_20_BEV,33.5,1,33.5,Credit Card,Online,22/01/2023,
+TXN_8809000,CUST_23,Milk Products,Item_3_MILK,8,3,24,Cash,In-store,10/01/2023,
+TXN_5008001,CUST_03,Electric household essentials,Item_10_EHE,18.5,6,111,Credit Card,Online,04/11/2024,
+TXN_5111184,CUST_19,Milk Products,Item_11_MILK,20,6,120,Credit Card,Online,18/07/2024,TRUE
+TXN_1499774,CUST_07,Butchers,Item_3_BUT,8,5,40,Credit Card,In-store,15/12/2022,TRUE
+TXN_2565828,CUST_21,Food,Item_24_FOOD,39.5,10,395,Credit Card,Online,18/02/2022,FALSE
+TXN_6312937,CUST_14,Computers and electric accessories,Item_13_CEA,23,2,46,Digital Wallet,In-store,09/02/2024,FALSE
+TXN_8775503,CUST_08,Computers and electric accessories,Item_6_CEA,12.5,2,25,Digital Wallet,In-store,11/10/2024,FALSE
+TXN_8775503,CUST_08,Computers and tech accessories,Item_6_CEA,12.5,2,25,Digital Wallet,In-store,11/8/2024,FALSE
