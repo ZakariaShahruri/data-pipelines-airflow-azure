@@ -15,12 +15,19 @@ def load_data(file_name: str = "inventory_data.csv") -> pd.DataFrame:
         raise FileNotFoundError(error_msg)
 
     try:
-        df = pd.read_csv(input_path)
+        suffix = input_path.suffix.lower()
+        if suffix == ".csv":
+            df = pd.read_csv(input_path)
+        elif suffix in (".xlsx", ".xls"):
+            df = pd.read_excel(input_path)
+        else:
+            raise ValueError(f"Unsupported file type: {suffix}")
+
         if df.empty:
             logging.warning("The file was found but it contains no data.")
             return df
         logging.info(f"SUCCESS: Loaded {len(df)} rows from {file_name}.")
         return df
     except Exception as e:
-        logging.error(f"FAILED to read CSV: {str(e)}")
+        logging.error(f"FAILED to read file: {str(e)}")
         raise

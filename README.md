@@ -76,7 +76,11 @@ The Yellow Taxi parquet file is too large to store in GitHub.
 2. Download **Yellow Taxi Trip Records — January 2025** (Parquet format)
 3. Place the file here: `part_1_batch_processing/input/yellow_tripdata_2025-01.parquet`
 
-Part 2 uses a small inventory CSV that is already included in the repository (`part_2_real_time_processing/input_zone/`).
+Part 2 uses a small inventory CSV included in the repository. It is stored in `input_zone/archived/` to prevent it from being auto-processed on startup. Copy it into `input_zone/` when you want to test:
+
+```bash
+cp part_2_real_time_processing/input_zone/archived/inventory_data.csv part_2_real_time_processing/input_zone/
+```
 
 ---
 
