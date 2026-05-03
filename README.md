@@ -20,7 +20,7 @@ Both pipelines follow the same pattern:
 Reader → Validator → Processor → Back-up Validator → Writer
 ```
 
-See `VALIDATION_RULES.md` for full validation logic. See `DEFENCE.md` for a defence walkthrough and Q&A.
+See `VALIDATION_RULES.md` for full validation logic.
 
 ---
 
@@ -34,7 +34,7 @@ taxi_project/
 │   └── realtime_pipeline_dag.py    ← Part 2 DAG (every 5 minutes)
 ├── part_1_batch_processing/
 │   ├── main.py
-│   ├── input/                      ← Raw parquet file
+│   ├── input/                      ← Download dataset here (see Dataset section below)
 │   ├── output/                     ← processed_taxi_data.parquet + rejected CSVs
 │   └── pipeline/
 └── part_2_real_time_processing/
@@ -69,6 +69,16 @@ docker compose up -d
 
 - **`part1_batch_taxi_pipeline`** — toggle ON, trigger manually or wait for 5 May 2026
 - **`part2_realtime_inventory_pipeline`** — polls `input_zone/` every 5 minutes; skips cleanly if empty
+
+---
+
+## Dataset (Part 1)
+
+The Yellow Taxi parquet file is not stored in this repository (56 MB).
+
+1. Go to: https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page
+2. Download **Yellow Taxi Trip Records — January 2025** (Parquet)
+3. Place the file at: `part_1_batch_processing/input/yellow_tripdata_2025-01.parquet`
 
 ---
 
