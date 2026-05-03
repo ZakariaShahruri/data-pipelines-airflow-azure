@@ -107,6 +107,12 @@ This runs the pipeline directly in your terminal without Airflow.
 
 ```bash
 cd part_1_batch_processing
+
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate        # Mac/Linux
+venv\Scripts\activate           # Windows
+
 pip install -r requirements.txt
 python3 main.py
 ```
@@ -117,6 +123,12 @@ The pipeline reads `input/yellow_tripdata_2025-01.parquet`, validates and proces
 
 ```bash
 cd part_2_real_time_processing
+
+# Create and activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate        # Mac/Linux
+venv\Scripts\activate           # Windows
+
 pip install -r requirements.txt
 python3 watcher.py
 ```
