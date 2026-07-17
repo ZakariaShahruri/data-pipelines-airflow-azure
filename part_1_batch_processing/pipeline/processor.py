@@ -56,7 +56,8 @@ def processor(df: pd.DataFrame) -> pd.DataFrame:
         df['tpep_pickup_datetime'].dt.hour,
         bins=[0, 6, 12, 18, 24],
         labels=['Night', 'Morning', 'Afternoon', 'Evening'],
-        right=True
+        right=True,
+        include_lowest=True  # otherwise an exact-midnight pickup (hour == 0) falls outside every bin -> NaN
     )
 
     print("  >> Processor complete.")

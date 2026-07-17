@@ -208,6 +208,28 @@ Credentials are loaded at runtime from the `.env` file. If `.env` is missing or 
 
 ---
 
+## Running the Tests
+
+Each pipeline has its own unit + integration test suite (pytest), covering the validation boundary rules, feature-engineering logic, and the writer's local/Azure paths (Azure calls are mocked — no credentials or network access needed).
+
+```bash
+cd part_1_batch_processing
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt -r ../requirements-dev.txt
+pytest -v
+```
+
+```bash
+cd part_2_real_time_processing
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt -r ../requirements-dev.txt
+pytest -v
+```
+
+Both suites also run automatically in CI on every push/PR — see `.github/workflows/tests.yml`.
+
+---
+
 ## Sharing Azure Credentials
 
 The `.env` file is excluded from the repository (`.gitignore`) because it contains a secret key. The actual connection string is shared via **Toledo** alongside the GitHub repository link. Copy it into your local `.env` file as described in Step 4.
