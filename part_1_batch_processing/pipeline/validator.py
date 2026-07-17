@@ -2,7 +2,6 @@
 # STAGE 2: VALIDATOR 
 # ==========================================
 import os
-import sys
 import pandas as pd
 from pipeline.config import Config
 
@@ -34,8 +33,7 @@ def validator(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     # Column existence check
     missing = [col for col in MANDATORY_COLS if col not in df.columns]
     if missing:
-        print(f"  >> CRITICAL: Missing mandatory columns: {missing}")
-        sys.exit(1)
+        raise ValueError(f"Missing mandatory columns: {missing}")
 
     # 1. Mandatory filters
     df = df.dropna(subset=MANDATORY_COLS)

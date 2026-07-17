@@ -4,10 +4,10 @@ import pytest
 from pipeline.validator import validator
 
 
-def test_missing_mandatory_column_exits(make_df, row_factory):
+def test_missing_mandatory_column_raises_value_error(make_df, row_factory):
     df = make_df([row_factory()])
     df = df.drop(columns=["trip_distance"])
-    with pytest.raises(SystemExit):
+    with pytest.raises(ValueError):
         validator(df)
 
 
