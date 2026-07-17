@@ -8,7 +8,7 @@ retryable, and logged independently in the Airflow UI.
 Intermediate DataFrames are persisted as Parquet files between tasks so
 large datasets (3.4 M+ rows) never pass through XCom.
 
-TODO: set DEFENSE_DATE to your actual defence date before the exam.
+Unscheduled — trigger manually from the Airflow UI or CLI.
 """
 from __future__ import annotations
 
@@ -29,14 +29,11 @@ sys.path.insert(0, str(BATCH_DIR))
 from dotenv import load_dotenv
 load_dotenv(BATCH_DIR / ".env")
 
-# ── Defence date — change this to your actual exam date ──────────────────────
-DEFENSE_DATE = datetime(2026, 5, 5)
-
 # ── Temp staging files shared between tasks ───────────────────────────────────
 TEMP = BATCH_DIR / "output" / "airflow_temp"
 
 default_args = {
-    "owner": "salina",
+    "owner": "data-engineering",
     "depends_on_past": False,
     "email_on_failure": False,
     "retries": 1,
@@ -149,8 +146,8 @@ def task_write(**ctx) -> None:
 with DAG(
     dag_id="part1_batch_taxi_pipeline",
     description="NYC Yellow Taxi Jan 2025 — Read → Validate → Process → Write",
-    start_date=DEFENSE_DATE,
-    schedule="@once",          # Runs exactly once on the defence date
+    start_date=datetime(2024, 1, 1),
+    schedule=None,              # Unscheduled — triggered manually
     default_args=default_args,
     catchup=False,
     tags=["batch", "taxi", "part1"],

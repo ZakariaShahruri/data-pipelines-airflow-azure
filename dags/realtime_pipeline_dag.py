@@ -40,7 +40,7 @@ OUTPUT_DIR = REALTIME_DIR / "output_zone"
 TEMP = OUTPUT_DIR / "airflow_temp"
 
 default_args = {
-    "owner": "salina",
+    "owner": "data-engineering",
     "depends_on_past": False,
     "email_on_failure": False,
     "retries": 1,

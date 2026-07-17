@@ -38,7 +38,7 @@ if __name__ == "__main__":
     writer(final_df, invalid_df=all_rejected)
 
     # ── Final Report ──────────────────────────────────────────────────────────
-    print(f"\n{'*'*50}\nFINAL DEFENCE QUALITY REPORT\n{'*'*50}")
+    print(f"\n{'*'*50}\nFINAL QUALITY REPORT\n{'*'*50}")
     print(f"  Raw Input:          {total_raw_count:,}")
     print(f"  Rejected (primary): {len(rejected_primary):,}")
     print(f"  Rejected (back-up): {len(rejected_backup):,}")
