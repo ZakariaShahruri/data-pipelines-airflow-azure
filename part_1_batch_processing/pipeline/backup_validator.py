@@ -1,7 +1,10 @@
+import logging
 import os
 import numpy as np
 import pandas as pd
 from pipeline.config import Config
+
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 
 def backup_validator(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -12,7 +15,7 @@ def backup_validator(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     Returns:
         (valid_df, rejected_df)
     """
-    print(f"\n{'='*50}\nSTAGE: BACK-UP VALIDATION\n{'='*50}")
+    logging.info(f"\n{'='*50}\nSTAGE: BACK-UP VALIDATION\n{'='*50}")
 
     os.makedirs(Config.LOCAL_OUTPUT_DIR, exist_ok=True)
     df_before = df.copy()
@@ -31,7 +34,7 @@ def backup_validator(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
     if not rejected.empty:
         rejected_path = os.path.join(Config.LOCAL_OUTPUT_DIR, "rejected_backup.csv")
         rejected.to_csv(rejected_path, index=False)
-        print(f"  >> Audit Trail: {len(rejected):,} invalid rows → {rejected_path}")
+        logging.info(f"Audit Trail: {len(rejected):,} invalid rows → {rejected_path}")
 
-    print(f"  >> Back-up validation complete. Retained {len(df):,} valid rows.")
+    logging.info(f"Back-up validation complete. Retained {len(df):,} valid rows.")
     return df, rejected

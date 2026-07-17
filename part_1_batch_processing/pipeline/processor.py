@@ -1,6 +1,9 @@
+import logging
+
 import numpy as np
 import pandas as pd
 
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 COLS_TO_REMOVE = ['VendorID', 'store_and_fwd_flag', 'RatecodeID']
 
@@ -11,12 +14,12 @@ def processor(df: pd.DataFrame) -> pd.DataFrame:
       - Removes unused columns
       - Adds computed columns
     """
-    print(f"\n{'='*50}\nSTAGE: PROCESSOR\n{'='*50}")
+    logging.info(f"\n{'='*50}\nSTAGE: PROCESSOR\n{'='*50}")
 
     # Remove columns per assignment spec
     cols_to_drop = [col for col in COLS_TO_REMOVE if col in df.columns]
     df = df.drop(columns=cols_to_drop)
-    print(f"  >> Removed columns: {cols_to_drop}")
+    logging.info(f"Removed columns: {cols_to_drop}")
 
     # Computed columns
     df['trip_duration_minutes'] = (
@@ -60,8 +63,8 @@ def processor(df: pd.DataFrame) -> pd.DataFrame:
         include_lowest=True  # otherwise an exact-midnight pickup (hour == 0) falls outside every bin -> NaN
     )
 
-    print("  >> Processor complete.")
-    print(f"  >> New columns added: trip_duration_minutes, average_speed_mph, "
-          f"revenue_per_mile, pickup_year, pickup_month, "
-          f"trip_distance_category, fare_category, trip_time_of_day")
+    logging.info("Processor complete.")
+    logging.info("New columns added: trip_duration_minutes, average_speed_mph, "
+                 "revenue_per_mile, pickup_year, pickup_month, "
+                 "trip_distance_category, fare_category, trip_time_of_day")
     return df

@@ -1,13 +1,12 @@
 import io
 import logging
-import os
 from pathlib import Path
 
 import pandas as pd
 from azure.storage.blob import BlobServiceClient
 from pipeline.config import Config
 
-logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
 
 
 def writer(valid_df: pd.DataFrame, invalid_df: pd.DataFrame = None) -> dict:
@@ -17,7 +16,7 @@ def writer(valid_df: pd.DataFrame, invalid_df: pd.DataFrame = None) -> dict:
     Returns:
         dict with keys: 'local_valid', 'local_invalid' (if provided), 'azure_url' (if uploaded)
     """
-    print(f"\n{'='*50}\nSTAGE: PERSISTENCE (LOCAL & CLOUD)\n{'='*50}")
+    logging.info(f"\n{'='*50}\nSTAGE: PERSISTENCE (LOCAL & CLOUD)\n{'='*50}")
 
     output_dir = Path(Config.LOCAL_OUTPUT_DIR)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -27,14 +26,14 @@ def writer(valid_df: pd.DataFrame, invalid_df: pd.DataFrame = None) -> dict:
     local_path = output_dir / Config.OUTPUT_FILE
     valid_df.to_parquet(local_path, engine="pyarrow", index=False)
     result["local_valid"] = local_path
-    print(f"  >> Local Save (valid):   {local_path}  ({len(valid_df):,} rows)")
+    logging.info(f"Local Save (valid):   {local_path}  ({len(valid_df):,} rows)")
 
     # ── 2. Local: rejected rows ───────────────────────────────────────────────
     if invalid_df is not None and not invalid_df.empty:
         rejected_path = output_dir / "rejected_rows.parquet"
         invalid_df.to_parquet(rejected_path, engine="pyarrow", index=False)
         result["local_invalid"] = rejected_path
-        print(f"  >> Local Save (invalid): {rejected_path}  ({len(invalid_df):,} rows)")
+        logging.info(f"Local Save (invalid): {rejected_path}  ({len(invalid_df):,} rows)")
 
     # ── 3. Azure upload ───────────────────────────────────────────────────────
     conn_str     = Config.AZURE_CONN_STRING
@@ -42,7 +41,7 @@ def writer(valid_df: pd.DataFrame, invalid_df: pd.DataFrame = None) -> dict:
     account_key  = Config.AZURE_ACCOUNT_KEY
 
     if not conn_str and not (account_name and account_key):
-        print("  >> Azure Upload: SKIPPED (no credentials in environment)")
+        logging.warning("Azure Upload: SKIPPED (no credentials in environment)")
         return result
 
     try:
@@ -69,10 +68,9 @@ def writer(valid_df: pd.DataFrame, invalid_df: pd.DataFrame = None) -> dict:
         blob_client.upload_blob(buffer, overwrite=True)
 
         result["azure_url"] = blob_client.url
-        print(f"  >> Azure Upload: SUCCESS → {blob_client.url}")
+        logging.info(f"Azure Upload: SUCCESS → {blob_client.url}")
 
     except Exception as e:
-        print(f"  >> Azure Upload: FAILED ({e})")
-        logger.error(f"Azure upload failed: {e}")
+        logging.error(f"Azure Upload: FAILED ({e})")
 
     return result

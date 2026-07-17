@@ -2,13 +2,16 @@
 # ==========================================
 # STAGE 1: READER
 # ==========================================
+import logging
 import os
 import pandas as pd
 from pipeline.config import Config
 
+logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
+
 
 def reader(file_path: str = Config.INPUT_FILE) -> pd.DataFrame:
-    print(f"\n{'='*50}\nSTAGE: READER INGESTION\n{'='*50}")
+    logging.info(f"\n{'='*50}\nSTAGE: READER INGESTION\n{'='*50}")
 
     if not os.path.exists(file_path):
         raise FileNotFoundError(f"Input file not found: {file_path}")
@@ -21,6 +24,6 @@ def reader(file_path: str = Config.INPUT_FILE) -> pd.DataFrame:
     if df.empty:
         raise ValueError(f"Input file contains no data: {file_path}")
 
-    print(f"  >> Total Raw Rows Loaded: {len(df):,}")
-    print(f"  >> Columns: {list(df.columns)}")
+    logging.info(f"Total Raw Rows Loaded: {len(df):,}")
+    logging.info(f"Columns: {list(df.columns)}")
     return df
