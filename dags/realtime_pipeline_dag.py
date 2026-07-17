@@ -138,6 +138,18 @@ def task_write(**ctx) -> None:
     print(f"[Writer] {len(df):,} rows saved as {output_name}")
 
 
+def task_generate_report(**ctx) -> None:
+    from pipeline.reporting import generate_report
+
+    final_path = ctx["ti"].xcom_pull(task_ids="backup_validate", key="final_path")
+    source_name = ctx["ti"].xcom_pull(task_ids="read_data", key="source_file_name")
+
+    df = pd.read_parquet(final_path, engine="pyarrow")
+    stem = Path(source_name).stem
+    report_path = generate_report(df, OUTPUT_DIR / f"{stem}_report.html")
+    print(f"[Reporting] {report_path}")
+
+
 def task_archive(**ctx) -> None:
     """Move the source file to input_zone/archived/ to prevent reprocessing."""
     input_file = ctx["ti"].xcom_pull(task_ids="check_for_files", key="input_file")
@@ -197,6 +209,11 @@ with DAG(
         python_callable=task_write,
     )
 
+    generate_report = PythonOperator(
+        task_id="generate_report",
+        python_callable=task_generate_report,
+    )
+
     archive_file = PythonOperator(
         task_id="archive_input_file",
         python_callable=task_archive,
@@ -209,5 +226,6 @@ with DAG(
         >> process_data
         >> backup_validate
         >> write_data
+        >> generate_report
         >> archive_file
     )

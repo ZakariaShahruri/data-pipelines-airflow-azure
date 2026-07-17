@@ -10,6 +10,7 @@ from pipeline.validator import validator
 from pipeline.processor import processor
 from pipeline.backup_validator import backup_validator
 from pipeline.writer import writer
+from pipeline.reporting import generate_report
 
 
 if __name__ == "__main__":
@@ -37,6 +38,9 @@ if __name__ == "__main__":
     all_rejected = pd.concat([rejected_primary, rejected_backup], ignore_index=True)
     writer(final_df, invalid_df=all_rejected)
 
+    # ── Stage 6: Report ───────────────────────────────────────────────────────
+    report_path = generate_report(final_df, f"{Config.LOCAL_OUTPUT_DIR}/report.html")
+
     # ── Final Report ──────────────────────────────────────────────────────────
     print(f"\n{'*'*50}\nFINAL QUALITY REPORT\n{'*'*50}")
     print(f"  Raw Input:          {total_raw_count:,}")
@@ -44,5 +48,6 @@ if __name__ == "__main__":
     print(f"  Rejected (back-up): {len(rejected_backup):,}")
     print(f"  Final Gold:         {len(final_df):,}")
     print(f"  Data Loss Rate:     {((total_raw_count - len(final_df)) / total_raw_count * 100):.2f}%")
+    print(f"  Report:             {report_path}")
     print(f"  Process Time:       {time.time() - start_time:.2f}s")
     print("*"*50 + "\n")

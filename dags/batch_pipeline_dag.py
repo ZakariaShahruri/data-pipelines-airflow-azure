@@ -141,6 +141,17 @@ def task_write(**ctx) -> None:
     print("*"*50)
 
 
+def task_generate_report(**ctx) -> None:
+    os.chdir(BATCH_DIR)
+    from pipeline.reporting import generate_report
+
+    final_path = ctx["ti"].xcom_pull(task_ids="backup_validate", key="final_path")
+    final_df = pd.read_parquet(final_path, engine="pyarrow")
+
+    report_path = generate_report(final_df, BATCH_DIR / "output" / "report.html")
+    print(f"[Reporting] {report_path}")
+
+
 # ── DAG definition ────────────────────────────────────────────────────────────
 
 with DAG(
@@ -178,5 +189,10 @@ with DAG(
         python_callable=task_write,
     )
 
+    generate_report = PythonOperator(
+        task_id="generate_report",
+        python_callable=task_generate_report,
+    )
+
     # ── Linear dependency chain ───────────────────────────────────────────────
-    read_data >> validate_data >> process_data >> backup_validate >> write_data
+    read_data >> validate_data >> process_data >> backup_validate >> write_data >> generate_report
