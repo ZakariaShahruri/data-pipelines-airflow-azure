@@ -1,10 +1,4 @@
-# Data Engineering Project — Batch & Real-time Pipelines
-
-**Students:** Salina Giri & Zakaria Shahruri | **Course:** Data Engineering, Year 2 Semester 2
-
----
-
-## Overview
+# Data Engineering Pipelines — Batch & Real-time
 
 Two independent data pipelines orchestrated by **Apache Airflow** and writing to **Azure Blob Storage**.
 
@@ -12,7 +6,7 @@ Two independent data pipelines orchestrated by **Apache Airflow** and writing to
 |---|---|---|
 | Dataset | NYC Yellow Taxi, Jan 2025 (~3.4 M rows) | Retail Inventory (150 rows, 11 columns) |
 | Input | `.parquet` file | `.csv` / `.xlsx` dropped into a folder |
-| Trigger | Scheduled — 5 May 2026 (or manual) | File drop into `input_zone/` |
+| Trigger | Manual | File drop into `input_zone/` |
 | Output | Local `.parquet` + Azure Blob | Local `.csv` + Azure Blob |
 
 Both pipelines follow the same pattern:
@@ -31,7 +25,7 @@ taxi_project/
 ├── .env.example                        ← Copy to .env and fill in credentials
 ├── docker-compose.yaml                 ← Airflow + PostgreSQL setup
 ├── dags/
-│   ├── batch_pipeline_dag.py           ← Part 1 DAG (runs once, 5 May 2026)
+│   ├── batch_pipeline_dag.py           ← Part 1 DAG (unscheduled, triggered manually)
 │   └── realtime_pipeline_dag.py        ← Part 2 DAG (polls every 5 minutes)
 ├── part_1_batch_processing/
 │   ├── main.py                         ← Standalone runner
@@ -62,8 +56,8 @@ Install the following before anything else:
 ## Step 2 — Clone the Repository
 
 ```bash
-git clone https://github.com/SalinaGiriUCLL/DataEngineeringProject.git
-cd DataEngineeringProject
+git clone https://github.com/ZakariaShahruri/data-pipelines-airflow-azure.git
+cd data-pipelines-airflow-azure
 ```
 
 ---
@@ -86,20 +80,22 @@ cp part_2_real_time_processing/input_zone/archived/inventory_data.csv part_2_rea
 
 ## Step 4 — Set Up the .env File (Azure Credentials)
 
-The Azure connection string is not stored in the repository for security reasons. It is shared separately (see below).
+The Azure connection string is never stored in the repository — it's a secret, so you provide your own.
 
 ```bash
 cp .env.example .env
 ```
 
-Open `.env` and replace the placeholder with the real connection string you received separately. The file should look like:
+Open `.env` and fill in the connection string for your own Azure Storage account (Azure Portal → Storage Account → Access keys → Connection string). The file should look like:
 
 ```
-AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=salinataxi2026;AccountKey=<key>;EndpointSuffix=core.windows.net
+AZURE_STORAGE_CONNECTION_STRING=DefaultEndpointsProtocol=https;AccountName=<your-account>;AccountKey=<key>;EndpointSuffix=core.windows.net
 AIRFLOW_UID=50000
 ```
 
-> **Azure credentials:** the actual connection string is shared via Toledo (the course submission platform). Do not commit the `.env` file — it is already in `.gitignore`.
+> Don't have an Azure account handy? That's fine — the pipeline still runs end-to-end and writes output locally; the Azure upload step is simply skipped with a warning if `.env` is missing or the connection string is invalid.
+>
+> Do not commit the `.env` file — it is already in `.gitignore`.
 
 ---
 
@@ -227,9 +223,3 @@ pytest -v
 ```
 
 Both suites also run automatically in CI on every push/PR — see `.github/workflows/tests.yml`.
-
----
-
-## Sharing Azure Credentials
-
-The `.env` file is excluded from the repository (`.gitignore`) because it contains a secret key. The actual connection string is shared via **Toledo** alongside the GitHub repository link. Copy it into your local `.env` file as described in Step 4.

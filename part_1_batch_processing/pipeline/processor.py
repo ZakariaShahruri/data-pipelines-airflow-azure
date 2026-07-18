@@ -16,7 +16,7 @@ def processor(df: pd.DataFrame) -> pd.DataFrame:
     """
     logging.info(f"\n{'='*50}\nSTAGE: PROCESSOR\n{'='*50}")
 
-    # Remove columns per assignment spec
+    # Remove columns not needed downstream
     cols_to_drop = [col for col in COLS_TO_REMOVE if col in df.columns]
     df = df.drop(columns=cols_to_drop)
     logging.info(f"Removed columns: {cols_to_drop}")
