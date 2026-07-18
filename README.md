@@ -1,5 +1,7 @@
 # Data Engineering Pipelines — Batch & Real-time
 
+[![Tests](https://github.com/ZakariaShahruri/data-pipelines-airflow-azure/actions/workflows/tests.yml/badge.svg)](https://github.com/ZakariaShahruri/data-pipelines-airflow-azure/actions/workflows/tests.yml)
+
 Two independent data pipelines orchestrated by **Apache Airflow** and writing to **Azure Blob Storage**.
 
 | | Part 1 — Batch | Part 2 — Real-time |
