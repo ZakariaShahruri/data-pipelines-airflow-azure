@@ -13,10 +13,24 @@ Two independent data pipelines orchestrated by **Apache Airflow** and writing to
 
 Both pipelines follow the same pattern:
 ```
-Reader → Validator → Processor → Back-up Validator → Writer
+Reader → Validator → Processor → Back-up Validator → Writer → Reporting
 ```
 
 See `VALIDATION_RULES.md` for the full validation logic per column.
+
+---
+
+## Sample Output
+
+The final stage of each pipeline turns the validated, feature-engineered "gold" dataset into a business-facing KPI report (`report.html`) — this is what the cleaning and enrichment stages are actually for.
+
+**Part 1 — NYC Yellow Taxi** (run against the real ~3.4M-row January 2025 dataset):
+
+![NYC Taxi gold data report](docs/screenshots/taxi_report.png)
+
+**Part 2 — Retail Inventory**:
+
+![Retail inventory gold data report](docs/screenshots/inventory_report.png)
 
 ---
 
@@ -32,14 +46,14 @@ taxi_project/
 ├── part_1_batch_processing/
 │   ├── main.py                         ← Standalone runner
 │   ├── input/                          ← Place downloaded parquet file here
-│   ├── output/                         ← Results written here after pipeline runs
-│   └── pipeline/                       ← reader, validator, processor, writer
+│   ├── output/                         ← Results + report.html written here after pipeline runs
+│   └── pipeline/                       ← reader, validator, processor, writer, reporting
 └── part_2_real_time_processing/
     ├── main.py                         ← Standalone runner
     ├── watcher.py                      ← Instant OS-level file trigger
     ├── input_zone/                     ← Drop .csv / .xlsx files here
-    ├── output_zone/                    ← Processed output written here
-    └── pipeline/                       ← reader, validator, processor, writer
+    ├── output_zone/                    ← Processed output + report.html written here
+    └── pipeline/                       ← reader, validator, processor, writer, reporting
 ```
 
 ---
